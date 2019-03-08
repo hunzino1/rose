@@ -27,21 +27,32 @@ def sum_reachs(arrays, row, col, rows, cols, has_visited, reach_num)
 end
 
 def less_than_k?(col, row, k)
-  col = col.to_s
-  col_size = col.size
-  row = row.to_s
-  row_size = col.size
+  # col = col.to_s
+  # col_size = col.size
+  # row = row.to_s
+  # row_size = col.size
+  #
+  # col_sum = 0
+  # (0..col_size-1).each do |index|
+  #   col_sum += col[index].to_i
+  # end
+  #
+  # row_sum = 0
+  # (0..row_size-1).each do |index|
+  #   row_sum += row[index].to_i
+  # end
+  #
+  #
+  # return (col_sum + row_sum) < k
+  return (num_sum(col) + num_sum(row) < k)
+end
 
-  col_sum = 0
-  (0..col_size-1).each do |index|
-    col_sum += col[index].to_i
+def num_sum(num)
+  sum = 0
+  while num > 0 do
+    sum += num % 10
+    num = num / 10
   end
 
-  row_sum = 0
-  (0..row_size-1).each do |index|
-    row_sum += row[index].to_i
-  end
-
-
-  return (col_sum + row_sum) < k
+  return sum
 end
