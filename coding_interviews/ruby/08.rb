@@ -9,7 +9,8 @@ def BTree
   end
 end
 
-def find_next_node_of_mid_list(btree, node)
+# 若有根节点，直接打印序列然后查找就行了
+def find_next_node_of_mid_list(node)
   if node.nil?
     return nil
   end
