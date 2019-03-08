@@ -13,6 +13,7 @@ def union_strings_sorted(str1, str2)
       end
     end
 
+    # flag为false说明str2余下的字符均比str1中的大，直接追加即可
     if !flag
       str1 = str1 + str2[str2_index..-1]
     end
