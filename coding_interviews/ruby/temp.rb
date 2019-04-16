@@ -1,27 +1,32 @@
-def super_egg_drop(k, n)
-  if n <= 0
-    return 0
+def kth_smallest(matrix, k)
+  if matrix.nil? || matrix.empty?
+    return nil
   end
-
-  total_times = 0
-  egg_drop_floor(k, 0, n, total_times)
-end
-
-def egg_drop_floor(k, min, max, total_times)
-  total_times += 1
-  mid = min + (max - min) >> 1
-
-  while max >= min do
-    if mid == k
-      return total_times
-    elsif mid > k
-      max = mid
-      return egg_drop_floor(k, min, max, total_times)
-    else
-      min = mid
-      return egg_drop_floor(k, min, max, total_times)
+  
+  rows = matrix.size
+  0.upto(rows - 1).each do |height|
+    index = height * (rows + 1) + 1
+    if index == k
+      return matrix[height][height]
+    elsif index > k
+      if height > 0
+      require "pry";binding.pry
+        index_last = (height - 1) * (rows + 1)
+        value = k - index_last
+        array = (matrix[height - 1][height..-1] + matrix[height][0...height]).sort
+        return array[value - 1]
+      else
+        value = index - k
+        return matrix[height][value - 1]
+      end
     end
   end
-
-  return 0
+  
+  return nil
+  
 end
+
+matrix = [[1,5,9],[10,11,13],[12,13,15]]
+k = 8
+
+kth_smallest(matrix, k)
