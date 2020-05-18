@@ -1,5 +1,7 @@
 package com.shj.java.uuid;
 
+import org.apache.commons.lang3.RandomStringUtils;
+
 import java.util.UUID;
 
 /**
@@ -11,5 +13,8 @@ public class App {
     public static void main(String[] args) {
         UUID.randomUUID();
         System.out.println(UUID.randomUUID());
+        String ss = RandomStringUtils.random(6);
+        System.out.println(ss);
+
     }
 }

@@ -15,5 +15,8 @@ public class App {
         System.out.println(PaySubSceneEnum.REFUND_LOAN.name());
         System.out.println(PaySubSceneEnum.REFUND_LOAN.name().equals(PaySubSceneEnum.REFUND_LOAN));
         System.out.println(PaySubSceneEnum.REFUND_LOAN.getClass().getName());
+
+        PaySubSceneEnum.REFUND_LOAN_REPAYMENT.name();
+        PaySubSceneEnum.SETTLE_CANCEL.name();
     }
 }
