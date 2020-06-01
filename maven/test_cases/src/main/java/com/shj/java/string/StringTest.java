@@ -15,6 +15,11 @@ public class StringTest {
         Integer b = null;
         System.out.println(s + a); // 1113
         System.out.println(s + b); // 111null
-        System.out.println(b.toString()); // 异常
+        //System.out.println(b.toString()); // 异常
+
+        String c = "     ";
+        System.out.println(c.split(" ").length);
+
+        //System.out.println(s[0]);
     }
 }
